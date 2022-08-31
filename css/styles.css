@@ -22,17 +22,68 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 96vh;
     width: auto;
-    height: 100%;
+
 }
 
-.header {
+.container-header {
     margin-top: 24px;
     margin-left: 16px;
+    
 }
 
-.header img {
+.container-header img {
     width: 32px;
     height: 48px;
 }
 
+.container-buttons {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container-textarea__palabra textarea::placeholder {
+    color: #0A3871;
+}
+
+.container-textarea__palabra textarea:focus {
+    outline-style: none;
+}
+
+.container-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-button__inicio {
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-size: 16px;
+    color: white;
+    margin: 29px 29px;
+}
+
+.container-button__palabra {
+    width: 278px;
+    height: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #E5E5E5;
+    border-radius: 24px;
+    font-size: 16px;
+    color: #0A3871;
+}
