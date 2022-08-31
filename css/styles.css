@@ -46,13 +46,6 @@ body {
     justify-content: space-evenly;
 }
 
-.container-textarea__palabra textarea::placeholder {
-    color: #0A3871;
-}
-
-.container-textarea__palabra textarea:focus {
-    outline-style: none;
-}
 
 .container-buttons {
     display: flex;
