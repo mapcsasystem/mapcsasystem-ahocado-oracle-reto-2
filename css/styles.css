@@ -15,7 +15,6 @@ body {
     background: #E5E5E5;
     width: 100vw;
     height: 90vh;
-    /* border: 10px solid black */
 }
 
 .header {
@@ -85,6 +84,78 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+
+.add-words textarea {
+    width: 85%;
+    height: 200px;
+    background: #E5E5E5;
+    font-weight: 400;
+    font-size: 32px;
+    color: #0A3871;
+    border: 0px;
+    resize: none;
+    margin: 20px 20px;
+}
+
+.add-words textarea::placeholder {
+    color: #0A3871;
+}
+
+.add-words textarea:focus {
+    outline-style: none;
+}
+
+.add-words-parrafo {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    margin: 20px 20px;
+}
+
+.add-words-parrafo span {
+    margin-right: 5px;
+}
+
+.add-words-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-add-words {
+    width: 98vw;
+    height: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-size: 16px;
+    color: white;
+    margin: 5px 5px;
+}
+
+.button-cancelar {
+    width: 98vw;
+    height: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-size: 16px;
+    color: white;
+    margin: 5px 5px;
+}
+
 
 
 @media (min-width:768px) {
