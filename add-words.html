@@ -22,7 +22,7 @@
 
         <section class="add-word">
             <div>
-                <textarea id="add-word-textarea" placeholder="Ingresa una palabra"
+                <textarea id="add-word-textarea" maxlength="8" placeholder="Ingresa una palabra"
                     onkeypress="return (event.charCode >= 65 && event.charCode <= 90) ||  event.charCode===144 || event.charCode == 8 || event.charCode == 241" /></textarea>
             </div>
             <div>
@@ -33,7 +33,7 @@
                     <p>Maximo 8 letras, solo mayusculas</p>
                 </div>
                 <div class="add-word-button">
-                    <button type="button" onclick="guardarWord()" class="button-add-word"
+                    <button onclick="guardarPalabra()" class="button-add-word"
                         id="button-add-word">Guardar y empezar</button>
                     <a type="button" onclick="cancelar()" class="button-cancelar"
                         id="button-cancelar">Cancelar</a>
