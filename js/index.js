@@ -11,6 +11,6 @@ function guardarPalabra() {
         localStorage.setItem('palabras', JSON.stringify(palabras))
         window.location.href = 'ahorcado.html';
     } else {
-        alert('ingresa una palabra')
+        alert('Ingresa una palabra...')
     }
 }
