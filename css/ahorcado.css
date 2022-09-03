@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    background: #E5E5E5;
+}
+
+body {
+    background: #E5E5E5;
+    width: 100vw;
+    height: 90vh;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.header img {
+    width: 32px;
+    height: 48px;
+}
+
+.ahorcado .canvas {
+    width: 100%;
+    height: 200px;
+}
+
+.ahorcado-repite {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #495057;
+    text-transform: uppercase;
+
+}
+
+.ahorcado-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-ahorcado {
+    width: 98vw;
+    height: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-size: 16px;
+    color: white;
+    margin: 5px 5px;
+}
+
+.button-ahorcado-desistir {
+    width: 98vw;
+    height: 67px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 24px;
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    font-size: 16px;
+    color: #0A3871;
+}
