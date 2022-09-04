@@ -31,7 +31,7 @@ body {
     flex-direction: row;
     margin-left: 10px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .header img {
@@ -55,6 +55,7 @@ body {
     text-align: center;
     color: #495057;
     text-transform: uppercase;
+    margin-bottom: 5px;
 
 }
 
@@ -91,4 +92,29 @@ body {
     border-radius: 24px;
     font-size: 16px;
     color: #0A3871;
+}
+
+.ahorcado-adivinadas {
+    margin-bottom: 10px;
+}
+
+.ahorcado-adivinadas p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ahorcado-adivinadas p span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 150%;
+    border-bottom: 2px solid #0A3871;
+    text-align: center;
+    color: #0A3871;
+    margin-left: 5px;
 }

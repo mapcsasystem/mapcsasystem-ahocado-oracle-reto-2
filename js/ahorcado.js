@@ -5,7 +5,6 @@ let height = body.clientHeight;
 
 const canvas = document.querySelector('canvas');
 const palabras = JSON.parse(localStorage.getItem('palabras'));
-console.log(palabras)
 const ctx = canvas.getContext('2d');
 
 ctx.strokeStyle = '#062449';
@@ -94,5 +93,9 @@ function resetCanvas() {
 }
 
 function palabraAzar() {
+
+}
+
+function desistir() {
 
 }
