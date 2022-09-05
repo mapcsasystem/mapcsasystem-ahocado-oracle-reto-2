@@ -1,17 +1,134 @@
 
-let body = document.querySelector('canvas');
-let width = body.clientWidth;
-let height = body.clientHeight;
-
+const body = document.querySelector('body');
+const palabraAdivinar = document.getElementById('palabra-a-adivinar');
 const canvas = document.querySelector('canvas');
+const palabraRepetida = document.getElementById('palabras-repetidas');
 const palabras = JSON.parse(localStorage.getItem('palabras'));
 const ctx = canvas.getContext('2d');
 
-ctx.strokeStyle = '#062449';
-ctx.lineWidth = 2;
-crearTronco();
+let palabra = '';
+let cantidadAciertos = 0;
+let cantidadErrores = 0;
+let letra = '';
+body.addEventListener('keypress', eventBody)
+
+inicio();
+
+function inicio() {
+    resetCanvas();
+    letra = '';
+    cantidadAciertos = 0;
+    cantidadErrores = 0;
+    palabraAdivinar.innerHTML = '';
+    palabraRepetida.innerHTML = '';
+    palabraAdivinar.classList.add('margin-p');
+    palabraRepetida.classList.add('margin-p');
+    const valorAzar = obtenerRandom(0, palabras.length);
+    palabra = palabras[valorAzar];
+    const cantidadLetras = palabra.length;
+    for (let i = 0; i < cantidadLetras; i++) {
+        const span = document.createElement('span')
+        palabraAdivinar.appendChild(span)
+    }
+    crearTronco();
+}
+
+function obtenerRandom(numMin, numMax) {
+    const valorAzar = Math.floor(Math.random() * numMax) + numMin;
+    return valorAzar;
+}
+
+
+function eventBody(event) {
+    if (cantidadAciertos >= palabra.length) {
+        console.log('GANASTE pRINCIPIO');
+        return;
+    }
+    if (cantidadErrores >= 6) {
+        console.log('PERDISTE PRINCIPIO');
+        return;
+    }
+    if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 209) {
+        let acerto = false;
+        for (let i = 0; i < palabra.length; i++) {
+            if (event.key === palabra[i]) {
+                const spans = document.querySelectorAll('#palabra-a-adivinar span')
+                spans[i].innerHTML = event.key;
+                palabraAdivinar.classList.remove('margin-p');
+                cantidadAciertos++;
+                acerto = true;
+            } else {
+                if (palabraRepetida.innerHTML.includes(event.key)) {
+                    letra = '';
+                    palabraRepetida.classList.remove('margin-p');
+                    cantidadErrores--;
+                    break;
+                } else {
+                    letra = event.key;
+                    palabraRepetida.classList.remove('margin-p');
+                }
+            }
+        }
+        if (cantidadAciertos >= palabra.length) {
+            console.log('GANASTE JUEGO VALIDO');
+            if (palabraRepetida.innerHTML.length === 0) {
+                palabraRepetida.classList.add('margin-p');
+            }
+            return;
+        }
+        if (acerto) {
+            if (palabraRepetida.innerHTML.length === 0) {
+                palabraRepetida.classList.add('margin-p');
+            }
+        } else {
+            palabraRepetida.innerHTML = palabraRepetida.innerHTML + letra;
+            switch (cantidadErrores) {
+                case 0:
+                    crearCabeza();
+                    cantidadErrores++;
+                    break;
+                case 1:
+                    crearTorzo();
+                    cantidadErrores++;
+                    break;
+                case 2:
+                    crearManoDerecha();
+                    cantidadErrores++;
+                    break;
+                case 3:
+                    crearManoIzquierda();
+                    cantidadErrores++;
+                    break;
+                case 4:
+                    crearPieDerecha();
+                    cantidadErrores++;
+                    break;
+                case 5:
+                    crearPieIzquierda();
+                    cantidadErrores++;
+                    console.log('PERDISTE EN SWITCH');
+                    if (palabraRepetida.innerHTML.length === 0) {
+                        palabraRepetida.classList.add('margin-p');
+                    }
+                    break;
+            }
+        }
+    } else {
+        alert('Solo letras mayusculas ni caracteres especiales');
+    }
+}
+
+function letraRepetida(caracter) {
+    if (!palabraRepetida.innerHTML.includes(caracter)) {
+        palabraRepetida.innerHTML = palabraRepetida.innerHTML + caracter;
+    } else {
+        cantidadErrores--;
+    }
+}
 
 function crearTronco() {
+    ctx.strokeStyle = '#062449';
+    ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(140, 2);
     ctx.lineTo(170, 2);

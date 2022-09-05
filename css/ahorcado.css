@@ -99,22 +99,26 @@ body {
 }
 
 .ahorcado-adivinadas p {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    text-align: center;
 }
 
 .ahorcado-adivinadas p span {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    vertical-align: bottom;
     font-weight: 400;
     font-size: 48px;
     line-height: 150%;
     border-bottom: 2px solid #0A3871;
+    width: 30px;
     text-align: center;
     color: #0A3871;
     margin-left: 5px;
+    display: inline-block;
+}
+
+.margin-p{
+   margin-top: 42px;
 }
