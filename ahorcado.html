@@ -15,41 +15,33 @@
 </head>
 
 <body>
-    
+
     <main class="container">
         <header class="header">
             <img src="assets/logo.png" alt="Logo">
         </header>
 
-            <section class="ahorcado">
+        <section class="ahorcado">
             <div>
-                <canvas id="canvas" class="canvas"/></canvas>
+                <canvas id="canvas" class="canvas" /></canvas>
             </div>
             <div>
                 <div class="ahorcado-adivinadas" id="ahorcado-adivinadas">
-                    <p id="palabra-adivinada">
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span"></span>
-                        <span class="ahorcado-adivinadas-span">a</span>
-                        <span class="ahorcado-adivinadas-span">a</span>
+                    <p id="palabra-a-adivinar">
                     </p>
                 </div>
                 <div class="ahorcado-repite">
-                    <p>letras que se repiten</p>
+                    <p id="palabras-repetidas"></p>
                 </div>
                 <div class="ahorcado-button">
-                    <button type="button" onclick="resetCanvas()" class="button-ahorcado"
-                        id="button-ahorcado">Nuevo juego</button>
+                    <button type="button" onclick="inicio()" class="button-ahorcado" id="button-ahorcado">Nuevo
+                        juego</button>
                     <button type="button" onclick="desistir()" class="button-ahorcado-desistir"
                         id="button-ahorcado-desistir">Desistir</button>
                 </div>
             </div>
         </section>
-    </main> 
+    </main>
     <script src="js/ahorcado.js"></script>
 </body>
 
