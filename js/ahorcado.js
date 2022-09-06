@@ -114,7 +114,7 @@ function eventBody(event) {
             }
         }
     } else {
-        alert('Solo letras mayusculas ni caracteres especiales');
+        Swal.fire('Solo letras mayusculas ni caracteres especiales');
     }
 }
 

@@ -1,10 +1,10 @@
 const palabra = document.getElementById('add-word-textarea');
+let palabras = JSON.parse(localStorage.getItem('palabras'));
 try {
     palabra.value = '';
 } catch (error) { }
 
 function guardarPalabra() {
-    let palabras = JSON.parse(localStorage.getItem('palabras'));
     if (!palabras) {
         palabras = [];
     }
@@ -14,7 +14,26 @@ function guardarPalabra() {
         localStorage.setItem('palabras', JSON.stringify(palabras))
         window.location.href = 'ahorcado.html';
     } else {
-        alert('Ingresa una palabra...')
+        Swal.fire('Ingresa una palabra...');
+    }
+}
+
+
+function redirect(route) {
+    switch (route) {
+        case 'add-words.html':
+            window.location.href = route;
+            break;
+
+        case 'ahorcado.html':
+            if (!palabras) {
+                palabras = [];
+                Swal.fire('Agrega una palabra primero');
+                break;
+            } else {
+                window.location.href = route;
+                break;
+            }
     }
 }
 

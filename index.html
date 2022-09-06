@@ -22,21 +22,22 @@
             </figure>
         </header>
         <section class="container-inicio">
-            <a href="ahorcado.html" class="button-inicio">
+            <button onclick="redirect('ahorcado.html')" class="button-inicio">
                 Iniciar juego
-            </a>
+            </button>
         </section>
         <section class="container-palabra">
-            <a href="add-words.html" class="button-palabra">
+            <button onclick="redirect('add-words.html')" class="button-palabra">
                 Agregar nueva palabra
-            </a>
+            </button>
         </section>
 
     </main>
     <footer class="footer" id="footer">
         &copy; - Miguel Angel Pérez Contreras
     </footer>
-    <script src="js/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/index.js" defer></script>
 </body>
 
 </html>
