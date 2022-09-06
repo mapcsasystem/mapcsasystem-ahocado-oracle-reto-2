@@ -17,13 +17,16 @@
 <body>
     <main class="container">
         <header class="header">
-            <img src="assets/logo.png" alt="Logo">
+            <figure id="figure">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Logo">
+                </a>
+            </figure>
         </header>
 
         <section class="add-word">
             <div>
-                <textarea id="add-word-textarea" maxlength="8" placeholder="Ingresa una palabra"
-                    onkeypress="return (event.charCode >= 65 && event.charCode <= 90) ||  event.charCode===144 || event.charCode == 8 || event.charCode == 241" /></textarea>
+                <textarea id="add-word-textarea" maxlength="8" value="" placeholder="Ingresa una palabra"></textarea>
             </div>
             <div>
                 <div class="add-word-parrafo">

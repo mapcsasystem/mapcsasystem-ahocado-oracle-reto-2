@@ -16,6 +16,7 @@ inicio();
 
 function inicio() {
     resetCanvas();
+    palabra = '';
     letra = '';
     cantidadAciertos = 0;
     cantidadErrores = 0;
@@ -41,12 +42,10 @@ function obtenerRandom(numMin, numMax) {
 
 function eventBody(event) {
     if (cantidadAciertos >= palabra.length) {
-        console.log('GANASTE pRINCIPIO');
-        return;
+        return gano();
     }
     if (cantidadErrores >= 6) {
-        console.log('PERDISTE PRINCIPIO');
-        return;
+        return perdio();
     }
     if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 209) {
         let acerto = false;
@@ -70,7 +69,7 @@ function eventBody(event) {
             }
         }
         if (cantidadAciertos >= palabra.length) {
-            console.log('GANASTE JUEGO VALIDO');
+            gano();
             if (palabraRepetida.innerHTML.length === 0) {
                 palabraRepetida.classList.add('margin-p');
             }
@@ -106,7 +105,7 @@ function eventBody(event) {
                 case 5:
                     crearPieIzquierda();
                     cantidadErrores++;
-                    console.log('PERDISTE EN SWITCH');
+                    perdio();
                     if (palabraRepetida.innerHTML.length === 0) {
                         palabraRepetida.classList.add('margin-p');
                     }
@@ -153,9 +152,6 @@ function crearTronco() {
     ctx.stroke();
     ctx.closePath();
 }
-
-
-
 
 function crearCabeza() {
     ctx.beginPath();
@@ -209,10 +205,22 @@ function resetCanvas() {
     crearTronco();
 }
 
-function palabraAzar() {
+function perdio() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Perdiste',
+        text: 'Imtentalo de nuevo!',
+    });
+}
 
+function gano() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Ganaste',
+        text: 'Felicidades!',
+    });
 }
 
 function desistir() {
-
+    inicio();
 }
