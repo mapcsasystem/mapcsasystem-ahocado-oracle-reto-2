@@ -41,6 +41,7 @@ function obtenerRandom(numMin, numMax) {
 
 
 function eventBody(event) {
+    console.log(event);
     if (cantidadAciertos >= palabra.length) {
         return gano();
     }

@@ -1,7 +1,11 @@
 const palabra = document.getElementById('add-word-textarea');
 const figure = document.getElementById('figure');
 let palabras = JSON.parse(localStorage.getItem('palabras'));
-palabra.addEventListener('keypress', keyUpTextArea);
+try {
+    palabra.addEventListener('keypress', keyUpTextArea);
+} catch (error) {
+    
+}
 
 function keyUpTextArea(event) {
     if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 20 || event.keyCode === 209 || event.keyCode === 144 || event.keyCode == 8 || event.keyCode == 241) {
@@ -13,6 +17,9 @@ function keyUpTextArea(event) {
 
 function guardarPalabra() {
     try {
+        if (!palabras) {
+          palabras=[];  
+        } 
         if (palabra.value.length > 0) {
             palabras.push(palabra.value);
             palabra.value = '';

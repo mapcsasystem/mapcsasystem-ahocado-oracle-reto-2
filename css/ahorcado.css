@@ -119,6 +119,86 @@ body {
     display: inline-block;
 }
 
-.margin-p{
-   margin-top: 42px;
+.margin-p {
+    margin-top: 42px;
+}
+
+@media (min-width:360px) {
+    .header {
+        margin-bottom: 190px;
+    }
+}
+
+@media (min-width:375px) {
+    .header {
+        margin-bottom: 120px;
+    }
+}
+
+@media (min-width:390px) {
+    .header {
+        margin-bottom: 300px;
+    }
+}
+
+@media (min-width:768px) {
+    .header {
+        margin-left: 48px;
+        margin-top: 24px;
+        margin-bottom: 300px;
+    }
+
+    .ahorcado-button {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 230PX;
+    }
+}
+
+@media (min-width:768px) {
+    .header {
+        margin-left: 48px;
+        margin-top: 24px;
+        margin-bottom: 0px;
+    }
+
+     .ahorcado-button {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 300PX;
+    } 
+}
+
+@media (min-width: 992px) {
+    .header {
+        margin-left: 48px;
+        margin-top: 24px;
+        margin-bottom: 0px;
+    }
+
+     .ahorcado-button {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0PX;
+    } 
+}
+
+@media (min-width: 1200px) {
+    /* .header {
+        margin-left: 48px;
+        margin-top: 24px;
+        margin-bottom: 0px;
+    }
+    .container-inicio{
+        margin-top: 10px;
+    }
+    .ahorcado-button {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40PX;
+    }  */
 }

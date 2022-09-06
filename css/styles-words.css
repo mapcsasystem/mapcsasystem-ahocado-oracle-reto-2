@@ -149,6 +149,32 @@ body {
 
 }
 
+@media (min-width: 820px) {
+
+    .add-word textarea {
+        height: 850px;
+    }
+
+    .add-word-button {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .button-add-word {
+        width: 46vw;
+        margin: 5px 5px;
+    }
+
+
+    .button-cancelar {
+        width: 46vw;
+        margin-top: 20px;
+    }
+
+}
+
 @media (min-width: 992px) {
 
 
